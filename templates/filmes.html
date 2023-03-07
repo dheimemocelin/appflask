@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+ 
+{% block conteudo %}
+
+<h2 style="text-align: center;">Filmes mais populares</h2>
+<hr>
+<div class="row">
+        {% for filme in filmes %}
+        <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="http://image.tmdb.org/t/p/w500{{filme.backdrop_path}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{filme.title}}</h5>
+                      <p class="card-text">{{filme.overview}}</p>
+                      <hr>
+                      <h4>Nota média</h4>
+                      
+                      <a href="#" class="btn btn-primary">{{filme.vote_average}}</a>
+
+                    </div>
+                </div>
+        </div>
+       
+    {% endfor %}
+        
+</div>"s"
+{% endblock conteudo %}
